@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import Users from './components/Users';
@@ -9,24 +10,26 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <nav>
-            <NavLink to="/signup">Sign Up</NavLink>
-            <NavLink to="/signin">Sign In</NavLink>
-            <NavLink to="/users">Users</NavLink>
-          </nav>
+          <Navbar />
         </header>
         <main>
           <Route
             path="/signup"
-            render={SignUp}
+            render={props => (
+              <SignUp {...props} />
+            )}
           />
           <Route
             path="/signin"
-            render={SignIn}
+            render={props => (
+              <SignIn {...props} />
+            )}
           />
           <Route
             path="/users"
-            render={Users}
+            render={props => (
+              <Users {...props} />
+            )}
           />
         </main>
       </div>
