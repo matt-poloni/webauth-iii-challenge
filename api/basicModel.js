@@ -6,7 +6,12 @@ module.exports = function(tbl) {
       return val
         ? db(tbl).where(val).first()
         : db(tbl);
-    },    
+    },
+    getArr: function(val) {
+      return val
+        ? db(tbl).where(val)
+        : db(tbl);
+    },
     post: function(entry) {
       return db(tbl).insert(entry);
     },

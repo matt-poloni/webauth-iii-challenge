@@ -3,7 +3,7 @@ const router = require('express').Router();
 const db = require('./model');
 
 router.get('/', (req, res) => {
-  const department = req.decoded.department;
+  const {department} = req.decoded;
   const retrieve = department === 'admin'
     ? db.get()
     : db.get({department});

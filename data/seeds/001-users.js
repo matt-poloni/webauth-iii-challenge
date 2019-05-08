@@ -12,13 +12,13 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 2,
-          username: 'matt',
+          username: "matt",
           password: bcrypt.hashSync('password', 10),
           department: "marketing"
         },
         {
           id: 3,
-          username: 'joe',
+          username: "joe",
           password: bcrypt.hashSync('password', 10),
           department: "sales"
         },
