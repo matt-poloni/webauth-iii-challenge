@@ -15,7 +15,7 @@ In this project we'll implement a full authentication workflow (register/login/l
 
 - [x] **Fork** and **Clone** this repository.
 - [x] **CD into the folder** where you cloned the repository.
-- [] Do your magic!
+- [x] Do your magic!
 
 ## Assignment
 
@@ -47,5 +47,5 @@ This project has two parts, you will work on it over two days in the full time c
 
 ## Stretch Problem
 
-- add the code necessary so that when a client makes a `GET` request to `/api/users` the server only returns documents with the `same department` as the logged in user. For example if the logged in user belongs to the finance department, then only users with the _finance_ department should be returned; if the logged in user is in _sales_ only users on the sales department should be returned.
+- [x] add the code necessary so that when a client makes a `GET` request to `/api/users` the server only returns documents with the `same department` as the logged in user. For example if the logged in user belongs to the finance department, then only users with the _finance_ department should be returned; if the logged in user is in _sales_ only users on the sales department should be returned.
 - add any extra functionality to make the application more user friendly like showing a message and redirecting to `/signin` if an unauthenticated user tries to access the list of users in the `/users` route.
