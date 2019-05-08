@@ -4,7 +4,10 @@ const db = require('./model');
 
 router.get('/', (req, res) => {
   const department = req.decoded.department;
-  return db.get({department})
+  const retrieve = department === 'admin'
+    ? db.get()
+    : db.get({department});
+  return retrieve
     .then(users => {
       res.status(200).json(users);
     })
