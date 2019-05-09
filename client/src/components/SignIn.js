@@ -11,10 +11,7 @@ class SignIn extends React.Component {
 
   handleChanges = e => {
     this.setState({
-      creds: {
-        ...this.state.creds,
         [e.target.name]: e.target.value,
-      }
     });
   };
 
@@ -22,10 +19,8 @@ class SignIn extends React.Component {
   //   e.preventDefault();
   //   // submit
   //   this.setState({
-  //     creds: {
   //       username: '',
   //       password: '',
-  //     }
   //   })
   // };
 
