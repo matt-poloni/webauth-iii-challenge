@@ -5,8 +5,8 @@ const db = require('./model');
 router.get('/', (req, res) => {
   const {department} = req.decoded;
   const retrieve = department === 'admin'
-    ? db.get()
-    : db.get({department});
+    ? db.get('', ['id','username', 'department'])
+    : db.get({department}, ['id','username','department']);
   return retrieve
     .then(users => {
       res.status(200).json(users);

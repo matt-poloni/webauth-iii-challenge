@@ -2,15 +2,15 @@ const db = require('../config/dbConfig');
 
 module.exports = function(tbl) {
   return {
-    get: function(val) {
+    get: function(val, sel=['*']) {
       return val
-        ? db(tbl).where(val).first()
-        : db(tbl);
+        ? db(tbl).select(sel).where(val).first()
+        : db(tbl).select(sel);
     },
-    getArr: function(val) {
+    getArr: function(val, sel=['*']) {
       return val
-        ? db(tbl).where(val)
-        : db(tbl);
+        ? db(tbl).select(sel).where(val)
+        : db(tbl).select(sel);
     },
     post: function(entry) {
       return db(tbl).insert(entry);

@@ -2,6 +2,7 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 
 const db = require('./model');
+const hlp = require('../helpers');
 
 router.post('/', (req, res) => {
   let user = req.body;
@@ -9,7 +10,8 @@ router.post('/', (req, res) => {
   user.password = hash;
   db.post(user)
     .then(created => {
-      res.status(201).json(created);
+      const token = hlp.genToken(user);
+      res.status(201).json({token});
     })
     .catch(err => {
       res.status(500).json({
