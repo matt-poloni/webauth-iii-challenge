@@ -41,6 +41,7 @@ class SignIn extends React.Component {
               type="text"
               value={this.state.username}
               onChange={this.handleChanges}
+              required
             />
           </div>
           <div>
@@ -50,6 +51,7 @@ class SignIn extends React.Component {
               type="text"
               value={this.state.password}
               onChange={this.handleChanges}
+              required
             />
           </div>
           <button type="submit">Sign In</button>
