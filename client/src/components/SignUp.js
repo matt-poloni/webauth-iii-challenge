@@ -9,6 +9,13 @@ class SignUp extends React.Component {
       department: null,
     }
   }
+  
+    handleChanges = e => {
+      const { id, value } = e.target;
+      this.setState({
+          [id]: value,
+      });
+    };
 
   // handleSubmit = e => {
   //   e.preventDefault();
@@ -19,12 +26,6 @@ class SignUp extends React.Component {
   //       department: null,
   //   })
   // };
-
-  handleChanges = e => {
-    this.setState({
-        [e.target.name]: e.target.value,
-    });
-  };
 
   render() {
     return (
