@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import withAuth from '../utils/withAuth';
 
 class Users extends React.Component {
   state = {
@@ -16,7 +17,6 @@ class Users extends React.Component {
     }
     axios.get(url, reqConfig)
       .then(res => {
-        console.log(res.data);
         const users = res.data;
         this.setState({ users });
       })
@@ -26,7 +26,6 @@ class Users extends React.Component {
   }
 
   render() {
-    console.log(this.state.users)
     return (
       <>
         <h2>Users List</h2>
@@ -43,4 +42,4 @@ class Users extends React.Component {
   }
 }
 
-export default Users;
+export default withAuth(Users);
